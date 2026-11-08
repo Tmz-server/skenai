@@ -66594,16 +66594,7 @@ void main() {
 			let first = hierarchyByteOffset;
 			let last = first + hierarchyByteSize - 1n;
 
-			let response = await fetch(hierarchyPath, {
-				headers: {
-					'content-type': 'multipart/byteranges',
-					'Range': `bytes=${first}-${last}`,
-				},
-			});
-
-
-
-			let buffer = await response.arrayBuffer();
+			if(!this._hierFull){ this._hierFull = fetch(hierarchyPath).then(r=>r.arrayBuffer()); } let _full = await this._hierFull; let buffer = _full.slice(Number(first), Number(last) + 1);
 
 			this.parseHierarchy(node, buffer);
 
