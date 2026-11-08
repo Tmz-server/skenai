@@ -66397,14 +66397,7 @@ void main() {
 					buffer = new ArrayBuffer(0);
 					console.warn(`loaded node with 0 bytes: ${node.name}`);
 				}else {
-					let response = await fetch(urlOctree, {
-						headers: {
-							'content-type': 'multipart/byteranges',
-							'Range': `bytes=${first}-${last}`,
-						},
-					});
-
-					buffer = await response.arrayBuffer();
+					if(!this._rangeBad){ let response = await fetch(urlOctree, { headers: { 'Range': `bytes=${first}-${last}` } }); if(response.status === 206){ buffer = await response.arrayBuffer(); if(buffer.byteLength !== Number(byteSize)){ this._rangeBad = true; } } else { this._rangeBad = true; try{ response.body.cancel(); }catch(e){} } } if(this._rangeBad){ if(!this._octFull){ this._octFull = fetch(urlOctree).then(r => r.arrayBuffer()); } let _f = await this._octFull; buffer = _f.slice(Number(first), Number(last) + 1); }
 				}
 
 				let workerPath;
