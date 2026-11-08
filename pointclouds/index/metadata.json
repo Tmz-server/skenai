@@ -1,0 +1,45 @@
+{
+	"version": "2.0",
+	"name": "suk1_2026-11-07-085854_lite",
+	"description": "",
+	"points": 4500000,
+	"projection": "",
+	"hierarchy": {
+		"firstChunkSize": 1760, 
+		"stepSize": 4, 
+		"depth": 8
+	},
+	"offset": [584115.236766884, 6060094.299335098, 143.06276719500002],
+	"scale": [0.001, 0.001, 0.001],
+	"spacing": 1.2079921874974389,
+	"boundingBox": {
+		"min": [584115.236766884, 6060094.299335098, 143.06276719500002], 
+		"max": [584269.8597668837, 6060248.922335098, 297.68576719467217]
+	},
+	"encoding": "DEFAULT",
+	"attributes": [
+		{
+			"name": "position",
+			"description": "",
+			"size": 12,
+			"numElements": 3,
+			"elementSize": 4,
+			"type": "int32",
+			"min": [584115.236766884, 6060094.299335098, 143.06276719500002],
+			"max": [584231.031766884, 6060248.922335098, 171.739767195],
+			"scale": [1, 1, 1],
+			"offset": [0, 0, 0]
+		},{
+			"name": "rgb",
+			"description": "",
+			"size": 6,
+			"numElements": 3,
+			"elementSize": 2,
+			"type": "uint16",
+			"min": [0, 0, 0],
+			"max": [65280, 65280, 65280],
+			"scale": [1, 1, 1],
+			"offset": [0, 0, 0]
+		}
+	]
+}
